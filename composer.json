@@ -1,0 +1,29 @@
+{
+    "name": "maarheeze/calendar-date",
+    "type": "library",
+    "license": "BSD-3-Clause",
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Maarheeze\\CalendarDate\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "require": {
+        "php": "^8.2"
+    },
+    "require-dev": {
+        "maarheeze/phpcs": "^1.0",
+        "phpstan/phpstan": "^2.1",
+        "phpunit/phpunit": "^12"
+    }
+}
