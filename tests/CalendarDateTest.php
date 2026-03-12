@@ -13,13 +13,6 @@ use function rand;
 
 class CalendarDateTest extends TestCase
 {
-    private function randomDate(): string
-    {
-        return (new DateTimeImmutable())
-            ->setDate(rand(1970, 2020), rand(1, 12), rand(1, 28))
-            ->format('Y-m-d');
-    }
-
     public function testInstantiate(): void
     {
         $dateTime = new DateTimeImmutable('now');
@@ -242,5 +235,12 @@ class CalendarDateTest extends TestCase
             (new DateTimeImmutable('today'))->format('Y-m-d'),
             CalendarDate::parse('today')->format('Y-m-d'),
         );
+    }
+
+    private function randomDate(): string
+    {
+        return (new DateTimeImmutable())
+            ->setDate(rand(1970, 2020), rand(1, 12), rand(1, 28))
+            ->format('Y-m-d');
     }
 }
