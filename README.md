@@ -58,4 +58,4 @@ $date->isFuture();
 
 ## License
 
-BSD-3
+MIT
