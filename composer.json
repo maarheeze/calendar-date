@@ -1,7 +1,7 @@
 {
     "name": "maarheeze/calendar-date",
     "type": "library",
-    "license": "BSD-3-Clause",
+    "license": "MIT",
     "config": {
         "sort-packages": true,
         "allow-plugins": {
