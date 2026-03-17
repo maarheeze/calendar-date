@@ -7,12 +7,13 @@ namespace Maarheeze\CalendarDate;
 use DateMalformedStringException;
 use DateTimeImmutable;
 use DateTimeInterface;
+use Stringable;
 
 use function sprintf;
 
-class CalendarDate
+class CalendarDate implements Stringable
 {
-    public const string DEFAULT_STRING_FORMAT = 'Y-m-d';
+    public const DEFAULT_STRING_FORMAT = 'Y-m-d';
 
     private DateTimeImmutable $date;
 
