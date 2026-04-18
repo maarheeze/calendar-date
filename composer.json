@@ -1,5 +1,6 @@
 {
     "name": "maarheeze/calendar-date",
+    "description": "a timezone-agnostic calendar date value object",
     "type": "library",
     "license": "MIT",
     "config": {
