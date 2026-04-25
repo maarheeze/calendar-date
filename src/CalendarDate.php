@@ -7,6 +7,7 @@ namespace Maarheeze\CalendarDate;
 use DateMalformedStringException;
 use DateTimeImmutable;
 use DateTimeInterface;
+use Exception;
 use Stringable;
 
 use function sprintf;
@@ -21,6 +22,11 @@ class CalendarDate implements Stringable
         DateTimeImmutable $date,
     ) {
         $this->date = $date->setTime(0, 0);
+    }
+
+    public function __toString(): string
+    {
+        return $this->format(self::DEFAULT_STRING_FORMAT);
     }
 
     public static function today(): self
@@ -51,14 +57,14 @@ class CalendarDate implements Stringable
     {
         try {
             return self::instance(new DateTimeImmutable($time));
-        } catch (DateMalformedStringException $previous) {
+        } catch (Exception $previous) {
             throw new CalendarDateException($previous->getMessage(), $previous->getCode(), $previous);
         }
     }
 
-    public function __toString(): string
+    public function toString(): string
     {
-        return $this->format(self::DEFAULT_STRING_FORMAT);
+        return $this->__toString();
     }
 
     public function format(string $format): string

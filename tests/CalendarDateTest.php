@@ -40,6 +40,15 @@ class CalendarDateTest extends TestCase
         $this->assertEquals($dateTime->format('Y-m-d'), $calendarDate->__toString());
     }
 
+    public function testToStringEqualsStringable(): void
+    {
+        $dateTime = new DateTimeImmutable($this->randomDate());
+
+        $calendarDate = CalendarDate::instance($dateTime);
+
+        $this->assertEquals($calendarDate->__toString(), $calendarDate->toString());
+    }
+
     public function testAddDays(): void
     {
         $calendarDate = CalendarDate::createFromFormat('Y-m-d', '2000-01-01');
