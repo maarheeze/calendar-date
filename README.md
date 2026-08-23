@@ -2,10 +2,6 @@
 
 A timezone-agnostic calendar date value object for PHP. No time component, no timezone concerns.
 
-## Requirements
-
-- PHP 8.2+
-
 ## Installation
 
 ```bash
